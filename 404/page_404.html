@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена - 404</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: url('img/background/uni-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .error-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .error-message {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .university-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        .university-logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            background: #667eea;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 15px;
+            }
+            
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Логотип учебного заведения -->
+        <img src="img/logo/university-logo.jpg" alt="Логотип учебного заведения" class="university-logo">
+        
+        <!-- Код ошибки -->
+        <div class="error-code">404</div>
+        
+        <!-- Заголовок -->
+        <h1 class="error-title">Страница не найдена</h1>
+        
+        <!-- Сообщение об ошибке -->
+        <div class="error-message">
+            К сожалению, запрашиваемая страница не существует или была перемещена.
+        </div>
+
+        <!-- Информация о учебном заведении -->
+        <div class="university-info">
+            <h3>Поволжский государственный технологический университет</h3>
+            <p>Мы готовим специалистов в различных областях знаний. Если вы ищете конкретную информацию о нашем заведении, воспользуйтесь основным меню сайта.</p>
+        </div>
+
+        <!-- Контактная информация -->
+        <div class="contact-info">
+            <p><strong>Телефон:</strong> +7 (8362) 45-53-44</p>
+            <p><strong>Email:</strong> info@Volgatech.edu</p>
+            <p><strong>Адрес:</strong>  Россия, Республика Марий Эл, Йошкар-Ола, площадь имени В.И. Ленина, 3</p>
+        </div>
+
+        <!-- Только кнопка "Назад" -->
+        <div class="back-btn">
+            <button onclick="history.back()" class="btn">Вернуться назад</button>
+        </div>
+    </div>
+
+    <script>
+        // Анимация появления элементов
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.container > *');
+            elements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'all 0.6s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
