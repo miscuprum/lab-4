@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дорожные знаки</title>
+    
+    <!-- Подключаем библиотеки jQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    
+    <!-- Стили для подсказок -->
+    <style>
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip .ui-tooltip {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 5px;
+            z-index: 1;
+        }
+        
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        
+        p {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Дорожные знаки</h1>
+    
+    <!-- Первый параграф с 5 изображениями -->
+    <p>
+        <img src="img/sign1.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.1.Железнодорожный переезд со шлагбаумом">
+        <img src="img/sign2.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.2.Железнодорожный переезд без шлагбаума">
+        <img src="img/sign3.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.3.1.Однопутная железная дорога">
+        <img src="img/sign4.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.5.Пересечение с трамвайной линией">
+        <img src="img/sign5.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.16.Неровная дорога">
+    </p>
+    
+    <!-- Второй параграф с 5 изображениями -->
+    <p>
+        <img src="img/sign6.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.17.Искусственная неровность">
+        <img src="img/sign7.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.18.Выброс гравия">
+        <img src="img/sign8.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.19.Опасная обочина">
+        <img src="img/sign9.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.20.1.Сужение дороги">
+        <img src="img/sign10.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.21.Двустороннее движение">
+    </p>
+
+    <!-- Третий параграф с 5 изображениями -->
+    <p>
+        <img src="img/sign11.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.22.Пешеходный переход">
+        <img src="img/sign12.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.23.Дети">
+        <img src="img/sign13.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.24.Пересечение с велосипедной дорожкой или велопешеходной дорожкой">
+        <img src="img/sign14.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.25.Дорожные работы">
+        <img src="img/sign15.png" alt="Предупреждающие знаки" class="tooltip" data-hint="1.26.Перегон скота">
+    </p>
+
+    <!-- Скрипт для подсказок -->
+    <script>
+        $(function () {
+            $(document).tooltip({
+                items: "img",
+                content: function () {
+                    var $element = $(this);
+                    if ($element.is("img")) {
+                        return $element.data('hint');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
